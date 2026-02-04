@@ -2,19 +2,19 @@
 
 @section('content')
 <section class="relative h-screen flex items-center justify-center overflow-hidden">
-    <img src="https://images.unsplash.com/photo-1494412574743-019582530c24?q=80&w=2070" 
-         class="absolute w-full h-full object-cover" alt="Kantor Kecamatan">
+    <img src="{{ asset('images/bg_beranda.png') }}"
     <div class="absolute inset-0 bg-black opacity-50"></div>
     <div class="relative z-10 text-center text-white px-4">
-        <h1 class="text-5xl md:text-7xl font-extrabold mb-4">Selamat Datang</h1>
-        <p class="text-xl md:text-2xl">Portal Informasi Resmi Pemerintah Kecamatan</p>
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-4">Selamat Datang Di Kecamatan Sungai Pinang</h1>
+        <p class="text-xl md:text-2xl">Melayani Masyarakat dengan Sepenuh Hati</p>
     </div>
 </section>
 
 <section class="py-20 bg-white">
     <div class="container mx-auto px-6">
         <div class="flex flex-col md:flex-row items-center gap-12">
-            <div class="w-full md:w-1/4 flex justify-center"> <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974" 
+            <div class="w-full md:w-1/4 flex justify-center"> 
+                <img src="{{ asset('images/sungai-pinang_headman_photo.png') }}" 
          class="rounded-2xl shadow-xl grayscale hover:grayscale-0 transition duration-500 
                 w-48 h-64 md:w-64 md:h-80 object-cover" 
          alt="Foto Camat">
