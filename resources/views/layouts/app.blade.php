@@ -17,9 +17,10 @@
     <nav class="navbar">
         <div class="container">
             <a href="{{ route('home') }}" class="navbar-brand">
-                <i class="fas fa-landmark"></i>
-                <span>Kecamatan Sungai Pinang</span>
-            </a>
+    <img src="{{ asset('images/Logo_Kota_Samarinda.png') }}" alt="Logo Kecamatan" class="logo">
+    <span>Kecamatan Sungai Pinang</span>
+</a>
+
             
             <button class="navbar-toggler" id="navbarToggler">
                 <i class="fas fa-bars"></i>
@@ -87,8 +88,12 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-section">
-                    <h3><i class="fas fa-landmark"></i> Kecamatan Sungai Pinang</h3>
+               <div class="footer-section">
+
+  <a href="{{ route('home') }}" class="footer-logo">
+    <img src="{{ asset('images/Logo_Kota_Samarinda.png') }}" alt="Logo Kecamatan" class="footer-logo-img">
+    <span>Kecamatan Sungai Pinang</span>
+</a>
                     <p>Website Resmi Kecamatan Sungai Pinang. Melayani masyarakat dengan sepenuh hati untuk kemajuan bersama.</p>
                     <div class="social-links">
                         <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>

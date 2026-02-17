@@ -17,33 +17,51 @@
 
 <!-- Sambutan Section -->
 @if($sambutan)
-<section class="section" style="background: var(--white);">
+<section class="section sambutan-welcome">
     <div class="container">
-        <div class="section-header">
-            <h2>Sambutan Pimpinan</h2>
-            <div class="section-divider"></div>
-        </div>
-        <div class="profile-card">
-            <div class="profile-image">
-                @if($pimpinan && $pimpinan->image)
-                    <img src="{{ asset('storage/' . $pimpinan->image) }}" alt="Pimpinan">
-                @else
-                    <img src="https://ui-avatars.com/api/?name=Camat&background=397FB1&color=fff&size=250" alt="Pimpinan">
-                @endif
+        <div class="sambutan-box">
+            <!-- Bagian Kiri: Foto & Identitas -->
+            <div class="sambutan-leader">
+                <div class="leader-photo-frame">
+                    @if($pimpinan && $pimpinan->image)
+                        <img src="{{ asset('storage/' . $pimpinan->image) }}" alt="{{ $pimpinan->title ?? 'Pimpinan' }}">
+                    @else
+                         <img src="https://ui-avatars.com/api/?name=Camat&background=397FB1&color=fff&size=300" alt="Foto Pimpinan">
+                    @endif
+                </div>
+                <div class="leader-info">
+                    <h3>{{ $pimpinan->title ?? 'Camat Sungai Pinang' }}</h3>
+                    <span>Camat Sungai Pinang</span>
+                </div>
             </div>
-            <div class="profile-content">
-                <h2>{{ $pimpinan->title ?? 'Camat Sungai Pinang' }}</h2>
-                <p class="position">Camat Sungai Pinang</p>
-                <div>{!! Str::limit(strip_tags($sambutan->content), 500) !!}</div>
-                <a href="{{ route('profil.sambutan') }}" class="btn btn-outline mt-3">
-                    Baca Selengkapnya <i class="fas fa-arrow-right"></i>
-                </a>
+
+            <!-- Bagian Kanan: Konten Sambutan -->
+            <div class="sambutan-body">
+                <div class="sambutan-header">
+                    <h2>Sambutan Pimpinan</h2>
+                    <div class="separator"></div>
+                </div>
+                
+                <!-- Ikon Kutipan Dekoratif -->
+                <div class="quote-decor">
+                    <i class="fas fa-quote-left"></i>
+                </div>
+
+                <!-- Teks Sambutan -->
+                <div class="sambutan-text">
+                    {!! Str::limit(strip_tags($sambutan->content), 450) !!}
+                </div>
+
+                <div class="sambutan-action">
+                    <a href="{{ route('profil.sambutan') }}" class="btn btn-read-more">
+                        Baca Selengkapnya <i class="fas fa-long-arrow-alt-right"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 </section>
 @endif
-
 <!-- Layanan Section -->
 
 

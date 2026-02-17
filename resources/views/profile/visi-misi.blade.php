@@ -3,30 +3,43 @@
 @section('title', 'Visi & Misi - Kecamatan Sungai Pinang')
 
 @section('content')
-<div class="page-header">
-    <h1>Visi & Misi</h1>
-    <div class="breadcrumb">
-        <a href="{{ route('home') }}">Beranda</a>
-        <i class="fas fa-chevron-right"></i>
-        <span>Visi & Misi</span>
+
+{{-- HEADER HALAMAN --}}
+<div class="page-header" style="background: linear-gradient(135deg, rgba(57, 127, 177, 0.9) 0%, rgba(24, 50, 105, 0.95) 100%), url('{{ asset('images/bg_beranda.png') }}') center/cover;">
+    <div class="container">
+        <h1>Visi & Misi</h1>
+        <div class="breadcrumb">
+            <a href="{{ route('home') }}"><i class="fas fa-home"></i> Beranda</a>
+            <i class="fas fa-chevron-right"></i>
+            <span>Visi & Misi</span>
+        </div>
     </div>
 </div>
 
-<section class="content-area">
+{{-- KONTEN UTAMA --}}
+<section class="section visi-misi-page">
     <div class="container">
-        <div class="content-wrapper">
-            <h2><i class="fas fa-bullseye text-primary"></i> Visi & Misi Kecamatan Sungai Pinang</h2>
-            @if($visiMisi)
-                <div class="mt-3">
-                    {!! $visiMisi->content !!}
+        @if($visiMisi)
+            <div class="visi-misi-container">
+                
+                {{-- Bagian Atas: Simbol/Icon --}}
+                <div class="top-icon-decor">
+                    <i class="fas fa-bullseye"></i>
                 </div>
-            @else
-                <div class="alert alert-info">
-                    <i class="fas fa-info-circle"></i>
-                    <span>Visi & Misi belum tersedia.</span>
+
+                {{-- Tampilan Konten --}}
+                <div class="formatted-visi-misi">
+                    {{-- nl2br untuk menjaga spasi/enter dari admin --}}
+                    {!! nl2br(e($visiMisi->content)) !!}
                 </div>
-            @endif
-        </div>
+
+            </div>
+        @else
+            <div class="alert alert-info">
+                <i class="fas fa-info-circle"></i> Data Visi & Misi belum tersedia.
+            </div>
+        @endif
     </div>
 </section>
+
 @endsection
